@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: careerforge-ai-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AUTO_SEED
+        value: "true"
+      - key: GROQ_API_KEY
+        value: your_groq_api_key_here
+      - key: GROQ_MODEL_FAST
+        value: openai/gpt-oss-20b
+      - key: GROQ_MODEL_QUALITY
+        value: openai/gpt-oss-120b
+      - key: GROQ_REASONING_EFFORT
+        value: low
+      - key: YOUTUBE_API_KEY
+        value: your_youtube_api_key_here
+      - key: YOUTUBE_CACHE_TTL_HOURS
+        value: "12"
